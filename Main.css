@@ -1,0 +1,94 @@
+body {
+    background-color: hsl(220, 7.7%, 22.9%);
+   }
+   textarea {
+     resize: vertical;
+   }
+   .widget {
+     width: 60%;
+     padding: 30px 20px;
+ border-radius: 5px;
+ background-color: rgb(46, 51, 56);
+ box-shadow: inset 0px 0px 0px 2px rgb(0 0 0 / 17%);
+ border: dimgray;
+
+   }
+   .bar {
+     height: 2px;
+     background-color: hsl(216.9 7.6% 33.5%);
+     width: 98%;
+     padding: 0px 0px;
+     margin: auto;
+     border-radius: 2px;
+   }
+   .bar2FORM {
+     height: 2px;
+     background-color: hsl(216.9 7.6% 33.5%);
+     width: 98%;
+     padding: 0px 0px;
+     margin: 15px 0px;
+     border-radius: 2px;
+   }
+   .text1 {
+     color: hsl(216, 3.7%, 73.5%);
+     font-size: 17;
+     font-family: Arial, Helvetica, sans-serif;
+     margin: 10px 0;
+   }
+   h2 {
+     color: white;
+     font-size: 17;
+   }
+   .msgbox {
+     padding: 10px 15px;
+   margin: 0px 0;
+   display: inline-block;
+   border: none;
+   border-radius: 4px;
+   box-sizing: border-box;
+   background-color: rgb(32, 34, 37);
+   color: rgb(191, 191, 191);
+   font-family: Arial, Helvetica, sans-serif;
+ }
+       .inputtext, select {
+   padding: 10px 15px;
+   margin-top: 7px;
+   width: 85%;
+   display: inline-block;
+   border: none;
+   border-radius: 5px;
+   box-sizing: border-box;
+   background-color: rgb(32, 34, 37);
+   color: rgb(191, 191, 191);
+ }
+ 
+ .button {
+   background-color: #5865F2;
+   border-color: #060b47;
+   color: white;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   border-radius: 3px;
+   border: none;
+   padding: 10px 15px;
+   cursor: pointer;
+   font-size: 50x;
+   margin: auto;
+   box-shadow: 0px 3px 11px 2px rgb(0 0 0 / 17%);
+   margin: auto;
+   transition-duration: 0.4s;
+
+ }
+ .button:hover {
+   background-color: #3f4ac3;
+   border: 5px;
+ }
+ .button:active{
+   box-shadow: inset 0px 0px 3px 2px rgb(0 0 0 / 17%);
+ }
+ div {
+ width: 40%;
+ padding: 10% 10%;
+ margin: auto;
+ 
+
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Discord Webhook sender
+    </title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="main.css">
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+  </head>
+  <body>
+    <div class="bar"></div>
+    <div class="maindiv">
+   <div class="widget">
+    <label class="text1" for="text">Webhook Address</label><br>
+      <input class="inputtext" type="text" id="hook" name="hook"><br><br>
+      <label class="text1" for="text">Bot Username</label><br>
+      <input class="inputtext" type="text" id="name" name="name"><br><br>
+      <label class="text1" for="text">Avatar URL</label><br>
+      <input class="inputtext" type="text" id="avatar" name="avatar"><br><br>
+      <div class="bar2FORM"></div>
+      <label class="text1" for="msg">Measage</label><br>
+      <textarea class="inputtext" name="msg" id="msg" cols="30" rows="5"></textarea><br><br>
+    <button class="button" onclick="sendMessage(
+      document.getElementById('msg').value,
+      document.getElementById('name').value,
+      document.getElementById('avatar').value,
+      document.getElementById('hook').value)">Send</button>
+    </div>
+    </div>
+    <div class="bar"></div>
+  </body>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").then(registration => {
+        console.log("SW Registerd");
+        console.log(registration);
+      }).catch(error => {
+        console.log("SW Registerd Failed");
+        console.log(error);
+      })
+    }
+
+
+    function sendMessage(msg,name,avatar,hook) {
+      const request = new XMLHttpRequest();
+      request.open("POST", hook);
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: name,
+        avatar_url: avatar,
+        content: msg,
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
