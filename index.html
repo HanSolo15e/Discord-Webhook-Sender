@@ -11,8 +11,7 @@
     <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
     <link rel="shortcut icon" href="faveicon.png" type="image/png">
   </head>
-  <body>
-    <div class="bar"></div>
+  <body onload="loadCookies()">
     <div class="maindiv">
    <div class="widget">
     <label class="text1" for="text">Webhook Address</label><br>
@@ -23,18 +22,36 @@
       <input class="inputtext" type="text" id="avatar" name="avatar"><br><br>
       <div class="bar2FORM"></div>
       <label class="text1" for="msg">Measage</label><br>
-      <textarea class="inputtext" name="msg" id="msg" cols="30" rows="5"></textarea><br><br>
+      <textarea class="textarea" name="msg" id="msg" cols="30" rows="5"></textarea><br><br>
     <button class="button" onclick="sendMessage(
       document.getElementById('msg').value,
       document.getElementById('name').value,
       document.getElementById('avatar').value,
       document.getElementById('hook').value)">Send</button>
+      <button class="button" id="saveBtn">Save</button>
     </div>
     </div>
-    <div class="bar"></div>
   </body>
 
   <script>
+    
+    const webHook = document.querySelector("#hook")
+    const saveBtn = document.querySelector("#saveBtn")
+    const msgText = document.querySelector("#msg")
+    const botname = document.querySelector("#name")
+
+    function loadCookies() {
+      webHook.value = getCookie("WebHook")
+      msgText.value = getCookie("msgText")
+      botname.value = getCookie("botname")
+    }
+
+    saveBtn.addEventListener("click", () => {
+      setCookie("WebHook", webHook.value);
+      setCookie("msgText", msgText.value);
+      setCookie("botname", botname.value);
+    })
+
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js").then(registration => {
         console.log("SW Registerd");
@@ -43,6 +60,24 @@
         console.log("SW Registerd Failed");
         console.log(error);
       })
+    }
+
+    function setCookie(name, value) {
+      document.cookie = `${name}=${value};`
+      console.log(document.cookie)
+    }
+
+    function getCookie(name) {
+      const cDecode = decodeURIComponent(document.cookie);
+      let result = null
+      const cArray = cDecode.split("; ")
+
+      cArray.forEach(element => {
+        if(element.indexOf(name) == 0) {
+          result = element.substring(name.length + 1)
+        }
+      });
+      return result 
     }
 
 

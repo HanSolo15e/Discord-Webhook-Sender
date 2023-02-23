@@ -1,16 +1,26 @@
 body {
     background-color: hsl(220, 8%, 23%);
    }
-   textarea {
+   .textarea {
      resize: vertical;
+     padding: 10px 15px;
+   margin-top: 7px;
+   width: 85%;
+   display: inline-block;
+   border: none;
+   border-radius: 5px;
+   box-sizing: border-box;
+   background-color: rgb(32, 34, 37);
+   color: rgb(191, 191, 191);
    }
    .widget {
-     width: 60%;
+     width: 50vw;
      padding: 30px 20px;
  border-radius: 5px;
  background-color: rgb(46, 51, 56);
  box-shadow: inset 0px 0px 0px 2px rgb(0 0 0 / 17%);
  border: dimgray;
+ 
 
    }
    .bar {
@@ -18,13 +28,13 @@ body {
      background-color: hsl(216.9 7.6% 33.5%);
      width: 98%;
      padding: 0px 0px;
-     margin: auto;
+     margin-top: auto;
      border-radius: 2px;
    }
    .bar2FORM {
      height: 2px;
      background-color: hsl(216.9 7.6% 33.5%);
-     width: 98%;
+     width: 88%;
      padding: 0px 0px;
      margin: 15px 0px;
      border-radius: 2px;
@@ -52,8 +62,8 @@ body {
  }
        .inputtext, select {
    padding: 10px 15px;
-   margin-top: 7px;
-   width: 85%;
+   margin: auto;
+   width: 50%;
    display: inline-block;
    border: none;
    border-radius: 5px;
@@ -72,7 +82,6 @@ body {
    padding: 10px 15px;
    cursor: pointer;
    font-size: 50x;
-   margin: auto;
    box-shadow: 0px 3px 11px 2px rgb(0 0 0 / 17%);
    margin: auto;
    transition-duration: 0.4s;
@@ -86,8 +95,8 @@ body {
    box-shadow: inset 0px 0px 3px 2px rgb(0 0 0 / 17%);
  }
  div {
- width: 40%;
- padding: 10% 10%;
+ padding: 20vh 20vw;
+ align-items: center;
  margin: auto;
  
 
