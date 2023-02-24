@@ -1,6 +1,7 @@
 {
 "name": "Discord Webhook",
 "short_name": "Webhook",
+"id": ".",
 "start_url": ".",
 "icons": [
     {

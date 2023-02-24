@@ -14,11 +14,11 @@
   <body onload="loadCookies()">
     <div class="maindiv">
    <div class="widget">
-    <label class="text1" for="text">Webhook Address</label><br>
+    <label class="text1" for="hook">Webhook Address</label><br>
       <input class="inputtext" type="text" id="hook" name="hook"><br><br>
-      <label class="text1" for="text">Bot Username</label><br>
+      <label class="text1" for="name">Bot Username</label><br>
       <input class="inputtext" type="text" id="name" name="name"><br><br>
-      <label class="text1" for="text">Avatar URL</label><br>
+      <label class="text1" for="avatar">Avatar URL</label><br>
       <input class="inputtext" type="text" id="avatar" name="avatar"><br><br>
       <div class="bar2FORM"></div>
       <label class="text1" for="msg">Measage</label><br>
@@ -39,17 +39,21 @@
     const saveBtn = document.querySelector("#saveBtn")
     const msgText = document.querySelector("#msg")
     const botname = document.querySelector("#name")
+    const avatarURL = document.querySelector("#avatar")
 
     function loadCookies() {
       webHook.value = getCookie("WebHook")
       msgText.value = getCookie("msgText")
       botname.value = getCookie("botname")
+      avatarURL.value = getCookie("avatarURL")
     }
 
     saveBtn.addEventListener("click", () => {
       setCookie("WebHook", webHook.value);
       setCookie("msgText", msgText.value);
       setCookie("botname", botname.value);
+      setCookie("avatarURL", avatarURL.value);
+      
     })
 
     if ("serviceWorker" in navigator) {
