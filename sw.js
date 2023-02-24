@@ -14,4 +14,4 @@ self.addEventListener("fetch", e => {
     );
 });
 
-console.log("v1.6")
+console.log("v1.7")
